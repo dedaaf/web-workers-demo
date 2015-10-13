@@ -42,8 +42,17 @@
 
     // Hint! This is where you should post messages to the web worker and
     // receive messages from the web worker.
+    //
+    if (window.Worker) {
+      var myWorker = new Worker("worker.js");
 
-    length = imageData.data.length / 4;
+      first.onchange = function() {
+        myWorker.postMessage([type]);
+        console.log('Message posted to worker');
+      };
+    }
+
+    /*length = imageData.data.length / 4;
     for (i = j = 0, ref = length; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
       r = imageData.data[i * 4 + 0];
       g = imageData.data[i * 4 + 1];
@@ -58,7 +67,7 @@
     toggleButtonsAbledness();
     return ctx.putImageData(imageData, 0, 0);
   };
-
+*/
   function revertImage() {
     return ctx.putImageData(original, 0, 0);
   }
