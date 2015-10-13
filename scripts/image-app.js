@@ -49,7 +49,7 @@
       document.querySelector('#invert').onchange = function() {
         myWorker.postMessage([type.data, imageData.data]);
         console.log('Message posted to worker');
-        manipulateImage("chroma");
+        manipulateImage("invert");
       };
     }
 
