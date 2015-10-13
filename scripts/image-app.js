@@ -46,7 +46,7 @@
     if (window.Worker) {
       var myWorker = new Worker("worker.js");
 
-      first.onchange = function() {
+      document.querySelector('#invert').onchange = function() {
         myWorker.postMessage([type]);
         console.log('Message posted to worker');
       };
