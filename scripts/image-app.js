@@ -66,8 +66,8 @@
     }
     toggleButtonsAbledness();
     return ctx.putImageData(imageData, 0, 0);
-  };
-*/
+*/  };
+
   function revertImage() {
     return ctx.putImageData(original, 0, 0);
   }
