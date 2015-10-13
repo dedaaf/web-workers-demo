@@ -45,13 +45,13 @@
     //
     if (window.Worker) {
       var myWorker = new Worker("worker.js");
-
-      if(myWorker.postMessage([type.data, imageData.data])){
+      var arrayToSent = [type, imageData];
+      if(myWorker.postMessage([type,imageData])){
         console.log('Message posted to worker');
       }
 
 
-       myWorker.onmessage = function(e){
+      myWorker.onmessage = function(e){
       imageData = e.data;
       console.log('Message received from worker');
       return ctx.putImageData(imageData, 0, 0);
