@@ -49,15 +49,17 @@
       myWorker.postMessage([type.data, imageData.data]);
       console.log('Message posted to worker');
 
-
-    }
-
-    myWorker.onmessage = function(e){
+       myWorker.onmessage = function(e){
       //result.textContent = e.data;
       console.log('Message received from worker');
       return ctx.putImageData(e.data, 0, 0);
 
     }
+
+
+    }
+
+
 
     /*length = imageData.data.length / 4;
     for (i = j = 0, ref = length; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
