@@ -46,10 +46,10 @@
     if (window.Worker) {
       var myWorker = new Worker("worker.js");
 
-      document.querySelector('#invert').onchange = function() {
+      document.querySelector.onchange = function() {
         myWorker.postMessage([type.data, imageData.data]);
         console.log('Message posted to worker');
-        manipulateImage("invert");
+
       };
     }
 
