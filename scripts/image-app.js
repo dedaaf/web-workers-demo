@@ -50,11 +50,11 @@
       console.log('Message posted to worker');
 
        myWorker.onmessage = function(e){
-      //result.textContent = e.data;
+      imageData = e.data;
       console.log('Message received from worker');
-      return ctx.putImageData(e.data, 0, 0);
+      return ctx.putImageData(imageData, 0, 0);
 
-    }
+      };
 
 
     }
