@@ -52,6 +52,13 @@
 
     }
 
+    myWorker.onmessage = function(e){
+      //result.textContent = e.data;
+      console.log('Message received from worker');
+      return ctx.putImageData(e.data, 0, 0);
+
+    }
+
     /*length = imageData.data.length / 4;
     for (i = j = 0, ref = length; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
       r = imageData.data[i * 4 + 0];
@@ -66,16 +73,17 @@
     }
     toggleButtonsAbledness();
     return ctx.putImageData(imageData, 0, 0);
-*/  };
+*/
+}
 
   function revertImage() {
     return ctx.putImageData(original, 0, 0);
   }
 
-/*  document.querySelector('#invert').onclick = function() {
+  document.querySelector('#invert').onclick = function() {
     manipulateImage("invert");
   };
-*/
+
   document.querySelector('#chroma').onclick = function() {
     manipulateImage("chroma");
   };
