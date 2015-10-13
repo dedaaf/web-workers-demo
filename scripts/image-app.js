@@ -46,8 +46,10 @@
     if (window.Worker) {
       var myWorker = new Worker("worker.js");
 
-      myWorker.postMessage([type.data, imageData.data]);
-      console.log('Message posted to worker');
+      if(myWorker.postMessage([type.data, imageData.data])){
+        console.log('Message posted to worker');
+      }
+
 
        myWorker.onmessage = function(e){
       imageData = e.data;
