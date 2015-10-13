@@ -46,11 +46,10 @@
     if (window.Worker) {
       var myWorker = new Worker("worker.js");
 
-      document.querySelector.onchange = function() {
-        myWorker.postMessage([type.data, imageData.data]);
-        console.log('Message posted to worker');
+      myWorker.postMessage([type.data, imageData.data]);
+      console.log('Message posted to worker');
 
-      };
+
     }
 
     /*length = imageData.data.length / 4;
