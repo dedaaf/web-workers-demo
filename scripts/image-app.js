@@ -47,8 +47,9 @@
       var myWorker = new Worker("worker.js");
 
       document.querySelector('#invert').onchange = function() {
-        myWorker.postMessage([type]);
+        myWorker.postMessage([type.data, imageData.data]);
         console.log('Message posted to worker');
+        manipulateImage("chroma");
       };
     }
 
@@ -72,9 +73,10 @@
     return ctx.putImageData(original, 0, 0);
   }
 
-  document.querySelector('#invert').onclick = function() {
+/*  document.querySelector('#invert').onclick = function() {
     manipulateImage("invert");
   };
+*/
   document.querySelector('#chroma').onclick = function() {
     manipulateImage("chroma");
   };
