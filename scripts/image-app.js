@@ -45,7 +45,7 @@
     //
     if (window.Worker) {
       var myWorker = new Worker("scripts/worker.js");
-      var arrayToSent = [data.type, data.imageData];
+      var arrayToSent = [type, imageData];
       if(myWorker.postMessage([type,imageData])){
         console.log('Message posted to worker');
       }
