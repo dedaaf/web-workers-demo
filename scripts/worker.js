@@ -23,8 +23,8 @@ this.onmessage = function(e) {
     function ManipulationException(message) {
       this.name = "ManipulationException";
       this.message = message;
-    };
+    }
     throw new ManipulationException('Image manipulation error');
     postMessage(undefined);
   }
-}
+};
